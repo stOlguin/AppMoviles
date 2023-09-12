@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
@@ -10,6 +10,9 @@ import { NavController } from '@ionic/angular';
 export class FabMenuComponent implements OnInit {
 
   constructor(private route:Router, private navCtrl:NavController) { }
+
+  @Input() pageTitle : string;
+  @Input() isNotHome : boolean;
 
   ngOnInit() {}
 

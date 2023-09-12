@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { FabMenuComponent } from 'src/app/components/fab-menu/fab-menu.component';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +15,7 @@ export class HomePage implements OnInit {
   isNotHome = false;
   loading : HTMLIonLoadingElement;
 
-  constructor(private loadingCtrl: LoadingController) {}
+  constructor(private loadingCtrl: LoadingController, private route:Router, private navCtrl:NavController) {}
 
   ngOnInit(): void {
     this.cargarLoading('Cargando');
@@ -31,9 +34,14 @@ export class HomePage implements OnInit {
     });
 
     await this.loading.present();
-
   }
 
-  
+  goHome(){
+    this.route.navigate(['/home']);
+  }
+
+  goAbout(){
+    this.route.navigate(['/about']);
+  }
 
 }

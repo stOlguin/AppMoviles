@@ -11,7 +11,7 @@ import { User } from '../../app.model'
 export class LoginPage implements OnInit {
 
   pageTitle = 'Login';
-  isNotHome = true;
+  isNotHome = false;
 
   user: any = {
     username : '',
@@ -19,8 +19,8 @@ export class LoginPage implements OnInit {
   }
 
   usuarios:User[] =[
-    {id:1,correo:'ejemplo1@correo.cl',password:'1234'},
-    {id:2,correo:'ejemplo2@correo.cl',password:'5678'}
+    {id:1,correo:'alumno@correo.cl',password:'1234'},
+    {id:2,correo:'profesor@correo.cl',password:'5678'}
   ]
 
   constructor(private toastCtrl: ToastController, private route : Router) { }
@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
     }
     if (usuarioEncontrado) {
       this.presentToast('Bienvenido ' + this.user.username);
-      this.route.navigate(['/']);
+      this.route.navigate(['/home']);
     }else {
       this.presentToast("Credenciales Incorrectas");
     }

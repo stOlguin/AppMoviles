@@ -9,4 +9,5 @@ import { NavController } from '@ionic/angular';
 })
 export class AppComponent {
   constructor() {}
+
 }

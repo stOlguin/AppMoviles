@@ -1,6 +1,6 @@
 <app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
 
-<ion-content>
+<ion-content class="ion-text-center">
     <ion-card>
         <ion-card-title color="primary" class="ion-text-center">
             <ion-label>
@@ -8,7 +8,8 @@
             </ion-label>
         </ion-card-title>
         <ion-card-content>
-            <ion-item>
+            <ion-icon class="icono" name="person-outline"></ion-icon>
+            <ion-item class="mtop">
                 <ion-label position="floating">Correo</ion-label>
                 <ion-input  type="text" 
                             [(ngModel)]="user.username" 

@@ -10,7 +10,7 @@ import { AnimationController } from '@ionic/angular';
 export class RecuperarPage implements OnInit {
 
   pageTitle = 'recuperar';
-  isNotHome = true;
+  isNotHome = false;
 
   @ViewChild('modal', { static: true }) modal: IonModal;
 

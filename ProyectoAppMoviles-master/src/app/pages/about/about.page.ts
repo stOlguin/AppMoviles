@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -10,9 +12,17 @@ export class AboutPage implements OnInit {
   pageTitle = 'about';
   isNotHome = true;
 
-  constructor() { }
+  constructor(private route:Router, private navCtrl:NavController) { }
 
   ngOnInit() {
+  }
+
+  goHome(){
+    this.route.navigate(['/home']);
+  }
+
+  goAbout(){
+    this.route.navigate(['/about']);
   }
 
 }
